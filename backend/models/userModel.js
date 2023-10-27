@@ -6,11 +6,13 @@ const userSchema = mongoose.Schema(
         type: String,
         required: [true, 'Please enter a name'],
     },
-    eamil: {
+    email: {
         type: String,
+        lowercase: true,
         required: [true, 'Please enter an email'],
         unique: true,
     },
+
     password: {
         type: String,
         required: [true, 'Please enter a password'],
@@ -20,6 +22,7 @@ const userSchema = mongoose.Schema(
         required: true,
         default: false,
     },
+
     },
     {
         timestamps: true,
